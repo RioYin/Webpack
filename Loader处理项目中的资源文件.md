@@ -44,8 +44,8 @@
 <h2>3.相关源码及解释</h2>
 * webpack.config.js
 ```
-var htmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
+var htmlWebpackPlugin = require('html-webpack-plugin');  //引入html-webpack-plugin插件
+var path = require('path');//引入path方法
 
 module.exports = {
 	entry:'./src/app.js',
