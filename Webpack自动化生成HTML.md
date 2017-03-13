@@ -1,4 +1,4 @@
-<h1>Webpack自动化生成HTML(以windows为例)</h1>
+<h1>Webpack自动化生成HTML</h1>
 <h2>1.安装webpack</h2>
 在命令行中执行`npm install webpack --save-dev`进行安装
 
