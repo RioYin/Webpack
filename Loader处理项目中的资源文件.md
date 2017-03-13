@@ -103,3 +103,97 @@ module.exports = {
 	]
 }
   ```
+  
+* postcss.config.js
+```
+module.exports = {
+
+plugins: [
+
+       require('autoprefixer')({ browsers: ["last 5 versions"] })
+
+  ]
+
+}
+```
+
+* app.js
+```
+import './css/common.css';
+import Layer from './components/layer/layer.js';
+
+
+const App = function(){
+	var dom = document.getElementById("app");
+	var layer = new Layer();
+
+	dom.innerHTML=layer.tpl({
+		name:'john',
+		arr:['apple','xiaomi','oppo']
+	});
+
+}
+
+new App();
+```
+
+* common.css
+```
+@import './flex.css';
+
+html,body{
+	padding:0;
+	margin:0;
+	background-color: red;
+}
+
+ul,li{
+	padding:0;
+	margin:0;
+	list-style:none;
+}
+```
+
+* layer.js
+```
+import tpl from './layer.tpl';
+import './layer.less';
+
+function layer(){
+	return {
+		name:'layer',
+		tpl:tpl
+	};
+}
+
+export default layer;
+```
+
+* layer.less
+```
+@import './modal.less';
+
+.layer{
+	width:600px;
+	height:200px;
+	background-color:green;
+
+
+  > div{
+	  width:400px;
+	  height:100px;
+	  background:url('../../assets/aolei.png');
+  }
+}
+```
+
+* layer.tpl
+```
+<div class="layer">
+    <img src="${require('../../assets/aolei.png')}"/>
+	<div>this is <%= name %> layer</div>
+	<% for(var i=0;i<arr.length;i++) { %>
+	    <%= arr[i] %>
+	<% } %>
+</div>
+```
