@@ -22,7 +22,7 @@ var htmlWebpackPlugin = require('html-webpack-plugin');  //引入html-webpack-pl
 module.exports = {
         
 	//资源输入	
-        entry:{
+    entry:{
         main:'./src/script/main.js',
 	    a:'./src/script/a.js',
 	    b:'./src/script/b.js',
@@ -30,7 +30,7 @@ module.exports = {
 	},
 	
 	//资源输出	
-        output:{
+    output:{
 		path:'./dist',  //输出路径		
         filename:'js/[name]-[chunkhash].js',  //输出文件名
 		publicPath:'http://cdn.com/'  //发布之后的引用路径
