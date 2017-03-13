@@ -1,5 +1,5 @@
 <h2>Webpack安装</h2>
-在命令行中进入指定文件夹，执行`npm install webpack --save-dev`进行安装
+在命令行中进入指定文件夹，先执行`npm init`初始化，再执行`npm install webpack --save-dev`进行安装
 
 <h2>文件打包</h2>
 * 在命令行中执行`webpack hello.js hello.bundle.js`
