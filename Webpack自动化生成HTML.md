@@ -46,7 +46,7 @@ module.exports = {
 		   date:new Date(),                //输出当前时间
 		   minify:{                        //压缩文件大小			
 		          removeComments:true,     //删除注释
-			  collapseWhitespace:true  //删除空格
+			      collapseWhitespace:true  //删除空格
 	           }
 	    }),*/
 	    new htmlWebpackPlugin({
