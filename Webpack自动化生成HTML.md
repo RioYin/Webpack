@@ -47,7 +47,7 @@ module.exports = {
 		   minify:{                        //压缩文件大小			
 		          removeComments:true,     //删除注释
 			  collapseWhitespace:true  //删除空格
-			  }
+	           }
 	    }),*/
 	    new htmlWebpackPlugin({
 		    filename:'a.html',
