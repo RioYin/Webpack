@@ -18,39 +18,44 @@
 * webpack.config.js
 
 ```
-var htmlWebpackPlugin = require('html-webpack-plugin');
-
+var htmlWebpackPlugin = require('html-webpack-plugin');  //引入html-webpack-plugin插件
 module.exports = {
-	entry:{
-		main:'./src/script/main.js',
+        
+	//资源输入	
+        entry:{
+            main:'./src/script/main.js',
 	    a:'./src/script/a.js',
 	    b:'./src/script/b.js',
 	    c:'./src/script/c.js'
 	},
-	output:{
-		path:'./dist',
-		filename:'js/[name]-[chunkhash].js',
-		publicPath:'http://cdn.com/'
-	},
+	
+	//资源输出	
+        output:{
+		path:'./dist',  //输出路径		
+                filename:'js/[name]-[chunkhash].js',  //输出文件名
+		publicPath:'http://cdn.com/'  //发布之后的引用路径
+		},
+		
+	//插件设置	
 	plugins:[
-	    // new htmlWebpackPlugin({
-		   //  filename:'index.html',
-		   //  template:'index.html',
-		   //  inject:false,
-		   //  title:'webpack is good',
-		   //  date:new Date(),
-		   //  minify:{
-			  //   removeComments:true,
-			  //   collapseWhitespace:true
-		   //  }
-	    // }),
+	    /*new htmlWebpackPlugin({
+		   filename:'index.html',          //输出文件名
+		   template:'index.html',          //模板文件名		
+		   inject:false,                   //代码注入位置		
+		   title:'webpack is good',        //输出网页名称		
+		   date:new Date(),                //输出当前时间
+		   minify:{                        //压缩文件大小			
+		          removeComments:true,     //删除注释
+			  collapseWhitespace:true  //删除空格
+			  }
+	    }),*/
 	    new htmlWebpackPlugin({
 		    filename:'a.html',
 		    template:'index.html',
 		    inject:false,
 		    title:'this is a.html',
-		    excludeChunks:['b','c']
-	    }),
+		    excludeChunks:['b','c']    //除了设置的chunk之外,其余的chunk都会加载	
+            }),
 	    new htmlWebpackPlugin({
 		    filename:'b.html',
 		    template:'index.html',
