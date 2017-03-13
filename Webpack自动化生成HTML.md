@@ -73,3 +73,27 @@ module.exports = {
 	]
 }
 ```
+
+* index.html
+
+```
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title><%= htmlWebpackPlugin.options.title %></title>    //利用插件设置网页名称
+	<script type="text/javascript">
+	    <%= compilation.assets[htmlWebpackPlugin.files.chunks.main.entry.substr(htmlWebpackPlugin.files.publicPath.length)].source() %>    //优化网页加载
+	    </script>
+</head>
+<body>
+    <!-- <%= htmlWebpackPlugin.options.date %> -->    //利用插件设置当前世界
+    <% for(var k in htmlWebpackPlugin.files.chunks){ %>    //遍历多个页面
+        <% if(k!=='main'){ %>                             //除main的chunk之外,均插入各自的chunk
+            <script type="text/javascript" src="<%= htmlWebpackPlugin.files.chunks[k].entry %>"></script>
+        <% } %>
+    <% } %>
+	
+</body>
+</html>
+```
