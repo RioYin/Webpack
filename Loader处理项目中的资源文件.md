@@ -56,13 +56,13 @@ module.exports = {
 	module:{
 		loaders:[          //loader数组，其中的每一项都是一个规则
 		    {
-		    	test:/\.js$/,                //正则检测以.js结尾的文件hdhd
+		    	test:/\.js$/,                //正则检测以.js结尾的文件
 		    	loader:'babel-loader',       //给符合检测的文件匹配babel-loader
 		    	exclude:path.resolve(__dirname,'node_modules'),    //选择不用打包的文件
 		    	include:path.resolve(__dirname,'src'),             //选择需要打包的文件
-		    	query:{
+		       query:{
 		    		presets:['latest']   //指定baber-loader插件		
-    	                }
+    	            }
 		    },
 		    {
 		    	test:/\.html$/,
@@ -86,7 +86,7 @@ module.exports = {
 		    },
 		    /*{
 		        test:/\.(png|jpg|gif|svg)$/i,
-			 loader:file-loader     //处理图片的相对路径
+			    loader:file-loader     //处理图片的相对路径
 		    },*/
 		    {
 		    	test:/\.(png|jpg|gif|svg)$/i,      //正则检测以.png或.jpg或.gif或.svg结尾的文件，不区分大小写
