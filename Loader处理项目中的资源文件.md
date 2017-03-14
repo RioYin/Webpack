@@ -15,7 +15,7 @@
     * css
       * common.css
       * flex.css
-    *app.js
+    * app.js
   * index.html
   * webpack.config.js
   * postcss.config.js
@@ -45,7 +45,7 @@
 * webpack.config.js
 ```
 var htmlWebpackPlugin = require('html-webpack-plugin');  //引入html-webpack-plugin插件
-var path = require('path');//引入path方法
+var path = require('path');  //引入path方法
 
 module.exports = {
 	entry:'./src/app.js',
@@ -62,7 +62,7 @@ module.exports = {
 		    	include:path.resolve(__dirname,'src'),             //选择需要打包的文件
 		    	query:{
 		    		presets:['latest']   //指定baber-loader插件		
-    	}
+    	                }
 		    },
 		    {
 		    	test:/\.html$/,
@@ -78,15 +78,15 @@ module.exports = {
 		    },
 		    {
 		    	test:/\.less$/,
-		    	loader:'style-loader!css-loader!postcss-loader!less-loader'   //当某个less文件`@import`其他less文件时，不必像上述处理css文件一样添加`css-loader?importLoaders=1`
+		    	 loader:'style-loader!css-loader!postcss-loader!less-loader'   //当某个less文件`@import`其他less文件时，不必像上述处理css文件一样添加`css-loader?importLoaders=1`
 		    },
 		    {
 		    	test:/\.scss/,
-		    	loader:'style-loader!css-loader!postcss-loader!sass-loader'  //处理方式同less
+		    	 loader:'style-loader!css-loader!postcss-loader!sass-loader'  //处理方式同less
 		    },
 		    /*{
 		        test:/\.(png|jpg|gif|svg)$/i,
-			loader:file-loader     //处理图片的相对路径
+			 loader:file-loader     //处理图片的相对路径
 		    },*/
 		    {
 		    	test:/\.(png|jpg|gif|svg)$/i,      //正则检测以.png或.jpg或.gif或.svg结尾的文件，不区分大小写
