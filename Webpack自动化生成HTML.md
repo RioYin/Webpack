@@ -1,20 +1,26 @@
 <h1>Webpack自动化生成HTML</h1>
+
 <h2>1.安装webpack</h2>
+
 在命令行中执行`npm install webpack --save-dev`进行安装
 
 <h2>2.新建相关文件夹</h2>
+
 * 在命令行中依次执行`mkdir src`和`mkdir dist`
 * 打开项目，在src文件下新建script和style文件夹
 
 <h2>3.新建相关文件</h2>
+
 * 在项目根目录下新建webpack.config.js
 * 在项目根目录下新建index.html
 * 在script文件夹下新建main.js,a.js,b.js,c.js等四个JS文件
 
 <h2>4.安装html-webpack-plugin插件</h2>
+
 在命令行中执行`npm install html-webpack-plugin --save-dev`进行安装
 
 <h2>5.各文件源码及解释</h2>
+
 * webpack.config.js
 
 ```
