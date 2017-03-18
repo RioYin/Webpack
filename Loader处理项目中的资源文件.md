@@ -1,7 +1,9 @@
 <h1>Loader处理项目中的资源文件</h1>
 
 <h2>1.新建相关文件夹</h2>
+
 相关文件目录如下：
+
 * Webpack
   * src
     * assets
@@ -21,6 +23,7 @@
   * postcss.config.js
   
 <h2>2.相关loader</h2>
+
 * babel-loader(处理ES6代码)
   * 安装：先在命令行中执行`npm install --save-dev babel-loader babel-core`，再执行`npm install --save-dev babel-preset-latest`
 * postcss-loader(处理css代码)
@@ -42,6 +45,7 @@
   * 安装：在命令行中执行`npm install image-webpack-loader --save-dev`
   
 <h2>3.相关源码及解释</h2>
+
 * webpack.config.js
 ```
 var htmlWebpackPlugin = require('html-webpack-plugin');  //引入html-webpack-plugin插件
